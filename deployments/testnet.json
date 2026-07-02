@@ -3,12 +3,12 @@
   "network": "robinhoodTestnet",
   "rpcUrl": "https://rpc.testnet.chain.robinhood.com",
   "explorerUrl": "https://explorer.testnet.chain.robinhood.com",
-  "settlementRouter": "0x9b9649206259e036628C681257c76cE1bC616ebc",
-  "operatorRegistry": "0xFC5C210aE66Ec677e9169Cfe69C7EC2201f9E6f3",
-  "asset": "0x02f08DDf3C163F35C602fe941054985Afd52ccB5",
+  "settlementRouter": "0x517ADeD3F84AA9D1b7BC8f86E44C0935AcCeDCa9",
+  "operatorRegistry": "0x1DC926A14Bb2337B610483E639f9c7E3a5652899",
+  "asset": "0xb783Db1d57D09De913e907400625560930671b66",
   "deployer": "0xE9b4c3DbE8EcEaBF19e003ED8AEf2E9F438BE669",
-  "latestApproveTx": "0x47af0c3512a74db354bcc3ace10d4afc1f1e7011eb90f0c95102b66d43a8d988",
-  "latestSettlementTx": "0x667e5cb8aab8d7efce84306f942a863195997703190a9fb5fa7a490e188af41a",
-  "latestMerchant": "0x6Cd8eD971D383D4F3FDD436446B94fDB516Fa4Fc",
-  "latestMerchantAmount": "3000000000000000000"
+  "latestApproveTx": "",
+  "latestSettlementTx": "",
+  "latestMerchant": "",
+  "latestMerchantAmount": ""
 }

@@ -86,9 +86,9 @@ Robinhood Chain testnet:
 
 Current deployed contracts:
 
-- `MockUSDG`: `0x02f08DDf3C163F35C602fe941054985Afd52ccB5`
-- `HoodClawSettlementRouter`: `0x9b9649206259e036628C681257c76cE1bC616ebc`
-- `HoodClawOperatorRegistry`: `0xFC5C210aE66Ec677e9169Cfe69C7EC2201f9E6f3`
+- `MockUSDG`: `0xb783Db1d57D09De913e907400625560930671b66`
+- `HoodClawSettlementRouter`: `0x517ADeD3F84AA9D1b7BC8f86E44C0935AcCeDCa9`
+- `HoodClawOperatorRegistry`: `0x1DC926A14Bb2337B610483E639f9c7E3a5652899`
 
 Deployment record:
 
@@ -99,22 +99,22 @@ Deployment record:
 Real test transactions already executed:
 
 - approve tx:
-  - `0x47af0c3512a74db354bcc3ace10d4afc1f1e7011eb90f0c95102b66d43a8d988`
+  - `0xa9b02941e90f5619c118d03c00f896432625e44bf50c6aaf88cbfa07adff2535`
 - settlement tx:
-  - `0x667e5cb8aab8d7efce84306f942a863195997703190a9fb5fa7a490e188af41a`
+  - `0x57d3dc6bc6beff1cdea73f5b793786628f64e641e9c640dbf4c1d3f2293edfc0`
 - merchant wallet funded:
-  - `0x6Cd8eD971D383D4F3FDD436446B94fDB516Fa4Fc`
+  - `0xf1B111F58aE4065c4b275f3AACdf58499268101A`
 - merchant amount received:
-  - `3000000000000000000` = `3 MockUSDG`
+  - `5000000000000000000` = `5 MockUSDG`
 
 Explorer links:
 
 - approve:
-  - `https://explorer.testnet.chain.robinhood.com/tx/0x47af0c3512a74db354bcc3ace10d4afc1f1e7011eb90f0c95102b66d43a8d988`
+  - `https://explorer.testnet.chain.robinhood.com/tx/0xa9b02941e90f5619c118d03c00f896432625e44bf50c6aaf88cbfa07adff2535`
 - settlement:
-  - `https://explorer.testnet.chain.robinhood.com/tx/0x667e5cb8aab8d7efce84306f942a863195997703190a9fb5fa7a490e188af41a`
+  - `https://explorer.testnet.chain.robinhood.com/tx/0x57d3dc6bc6beff1cdea73f5b793786628f64e641e9c640dbf4c1d3f2293edfc0`
 - merchant wallet:
-  - `https://explorer.testnet.chain.robinhood.com/address/0x6Cd8eD971D383D4F3FDD436446B94fDB516Fa4Fc`
+  - `https://explorer.testnet.chain.robinhood.com/address/0xf1B111F58aE4065c4b275f3AACdf58499268101A`
 
 ## Repository Layout
 
