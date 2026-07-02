@@ -12,6 +12,12 @@ async function main() {
   const balance = await hre.ethers.provider.getBalance(deployer.address);
   console.log("Balance:", hre.ethers.formatEther(balance), "ETH");
 
+  const tokenFactory = await hre.ethers.getContractFactory("MockUSDG");
+  const initialSupply = hre.ethers.parseUnits("1000000", 18);
+  const token = await tokenFactory.deploy(deployer.address, initialSupply);
+  await token.waitForDeployment();
+  const tokenAddress = await token.getAddress();
+
   const routerFactory = await hre.ethers.getContractFactory("HoodClawSettlementRouter");
   const router = await routerFactory.deploy();
   await router.waitForDeployment();
@@ -22,6 +28,7 @@ async function main() {
   await registry.waitForDeployment();
   const registryAddress = await registry.getAddress();
 
+  console.log("MockUSDG:", tokenAddress);
   console.log("HoodClawSettlementRouter:", routerAddress);
   console.log("HoodClawOperatorRegistry:", registryAddress);
 
@@ -63,7 +70,7 @@ async function main() {
     explorerUrl: "https://explorer.testnet.chain.robinhood.com",
     settlementRouter: routerAddress,
     operatorRegistry: registryAddress,
-    asset: "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+    asset: tokenAddress,
     deployedAt: new Date().toISOString(),
     deployer: deployer.address,
   };
@@ -73,6 +80,7 @@ async function main() {
   console.log(`Wrote deployment manifest: ${manifestPath}`);
 
   console.log("Verification commands:");
+  console.log(`npx hardhat verify --network robinhoodTestnet ${tokenAddress} \"${deployer.address}\" \"${initialSupply}\"`);
   console.log(`npx hardhat verify --network robinhoodTestnet ${routerAddress}`);
   console.log(`npx hardhat verify --network robinhoodTestnet ${registryAddress}`);
 }

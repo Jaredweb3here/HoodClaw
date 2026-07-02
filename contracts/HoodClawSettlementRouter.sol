@@ -1,6 +1,10 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.24;
 
+interface IERC20 {
+    function transferFrom(address from, address to, uint256 value) external returns (bool);
+}
+
 contract HoodClawSettlementRouter {
     struct Settlement {
         bytes32 invoiceHash;
@@ -83,6 +87,8 @@ contract HoodClawSettlementRouter {
         );
 
         require(!isSettled[invoiceHash], "already settled");
+
+        require(IERC20(asset).transferFrom(payer, merchant, amount), "asset transfer failed");
 
         settlements[invoiceHash] = Settlement({
             invoiceHash: invoiceHash,
