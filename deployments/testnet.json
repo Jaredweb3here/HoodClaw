@@ -7,8 +7,9 @@
   "operatorRegistry": "0x1DC926A14Bb2337B610483E639f9c7E3a5652899",
   "asset": "0xb783Db1d57D09De913e907400625560930671b66",
   "deployer": "0xE9b4c3DbE8EcEaBF19e003ED8AEf2E9F438BE669",
-  "latestApproveTx": "",
-  "latestSettlementTx": "",
-  "latestMerchant": "",
-  "latestMerchantAmount": ""
+  "deployedAt": "2026-07-01T11:42:00.000Z",
+  "latestApproveTx": "0xa9b02941e90f5619c118d03c00f896432625e44bf50c6aaf88cbfa07adff2535",
+  "latestSettlementTx": "0x57d3dc6bc6beff1cdea73f5b793786628f64e641e9c640dbf4c1d3f2293edfc0",
+  "latestMerchant": "0xf1B111F58aE4065c4b275f3AACdf58499268101A",
+  "latestMerchantAmount": "5000000000000000000"
 }

@@ -48,6 +48,14 @@ async function main() {
       active: true,
       policyTier: "balanced",
       endpoint: "https://hoodclaw.dev/operators/beta"
+    },
+    {
+      id: "gamma",
+      wallet: deployer.address,
+      feeBps: 120,
+      active: true,
+      policyTier: "premium",
+      endpoint: "https://hoodclaw.dev/operators/gamma"
     }
   ];
 

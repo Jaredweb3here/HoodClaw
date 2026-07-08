@@ -26,6 +26,17 @@ async function main() {
   );
   const receipt = await settleTx.wait();
 
+  const invoiceHash = await router.computeInvoiceHash(
+    invoiceId,
+    "demo:live-settlement",
+    merchant,
+    payer,
+    operator,
+    manifest.asset,
+    amount
+  );
+  const settled = await router.getSettlement(invoiceHash);
+
   const merchantBalance = await token.balanceOf(merchant);
 
   console.log(JSON.stringify({
@@ -33,6 +44,8 @@ async function main() {
     approveTx: approveTx.hash,
     settlementTx: settleTx.hash,
     blockNumber: receipt.blockNumber,
+    invoiceHash,
+    settledOnChain: settled.invoiceHash === invoiceHash,
     merchantBalance: merchantBalance.toString()
   }, null, 2));
 }

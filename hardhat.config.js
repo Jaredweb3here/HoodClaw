@@ -22,6 +22,12 @@ module.exports = {
       accounts: PRIVATE_KEY ? [PRIVATE_KEY] : [],
     },
   },
+  gasReporter: {
+    enabled: process.env.REPORT_GAS === "true",
+    currency: "USD",
+    outputFile: "gas-report.txt",
+    noColors: true,
+  },
   etherscan: {
     apiKey: {
       robinhoodTestnet: "empty",

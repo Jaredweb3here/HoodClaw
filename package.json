@@ -1,6 +1,6 @@
 {
   "name": "hoodclaw",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": false,
   "license": "MIT",
   "description": "HoodClaw protocol contracts for operator-routed paid API settlement on Robinhood Chain",
@@ -10,7 +10,9 @@
     "test": "hardhat test",
     "deploy:hoodclaw:testnet": "hardhat run scripts/deploy-hoodclaw.js --network robinhoodTestnet",
     "verify:hoodclaw:testnet": "hardhat run scripts/verify-info.js --network robinhoodTestnet",
-    "test:settlement:testnet": "hardhat run scripts/test-live-settlement.js --network robinhoodTestnet"
+    "test:settlement:testnet": "hardhat run scripts/test-live-settlement.js --network robinhoodTestnet",
+    "size": "hardhat size-contracts",
+    "lint": "solhint 'contracts/**/*.sol'"
   },
   "dependencies": {},
   "devDependencies": {
