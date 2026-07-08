@@ -69,4 +69,27 @@ contract HoodClawOperatorRegistry {
     function totalOperators() external view returns (uint256) {
         return operatorKeys.length;
     }
+
+    function listOperators() external view returns (Operator[] memory) {
+        Operator[] memory result = new Operator[](operatorKeys.length);
+        for (uint256 i = 0; i < operatorKeys.length; i++) {
+            result[i] = operators[operatorKeys[i]];
+        }
+        return result;
+    }
+
+    function deactivateOperator(string calldata id) external onlyOwner {
+        bytes32 key = keccak256(bytes(id));
+        require(operators[key].wallet != address(0), "not found");
+        operators[key].active = false;
+        emit OperatorUpserted(
+            key,
+            operators[key].id,
+            operators[key].wallet,
+            operators[key].feeBps,
+            false,
+            operators[key].policyTier,
+            operators[key].endpoint
+        );
+    }
 }

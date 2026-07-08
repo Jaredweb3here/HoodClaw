@@ -19,6 +19,7 @@ contract HoodClawSettlementRouter {
     }
 
     address public owner;
+    bool public paused;
     mapping(bytes32 => Settlement) public settlements;
     mapping(bytes32 => bool) public isSettled;
 
@@ -34,8 +35,16 @@ contract HoodClawSettlementRouter {
         uint256 timestamp
     );
 
+    event Paused(address by);
+    event Unpaused(address by);
+
     modifier onlyOwner() {
         require(msg.sender == owner, "not owner");
+        _;
+    }
+
+    modifier whenNotPaused() {
+        require(!paused, "router paused");
         _;
     }
 
@@ -46,6 +55,17 @@ contract HoodClawSettlementRouter {
     function transferOwnership(address newOwner) external onlyOwner {
         require(newOwner != address(0), "zero owner");
         owner = newOwner;
+    }
+
+    function setPaused(bool _paused) external onlyOwner {
+        paused = _paused;
+        if (_paused) emit Paused(msg.sender);
+        else emit Unpaused(msg.sender);
+    }
+
+    function getSettlement(bytes32 invoiceHash) external view returns (Settlement memory) {
+        require(isSettled[invoiceHash], "not found");
+        return settlements[invoiceHash];
     }
 
     function computeInvoiceHash(
@@ -70,7 +90,7 @@ contract HoodClawSettlementRouter {
         address operator,
         address asset,
         uint256 amount
-    ) external returns (bytes32 invoiceHash) {
+    ) external whenNotPaused returns (bytes32 invoiceHash) {
         require(merchant != address(0), "merchant required");
         require(operator != address(0), "operator required");
         require(asset != address(0), "asset required");

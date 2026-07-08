@@ -218,7 +218,10 @@ Current non-goals:
 
 ## Roadmap
 
-### Live now
+- `getSettlement(bytes32)` — fetch full settlement struct by invoice hash
+- `setPaused(bool)` — owner-only emergency pause
+- `listOperators()` — return all registered operators in one call
+- `deactivateOperator(string)` — owner-only operator deactivation
 
 - settlement router contract
 - operator registry contract
@@ -226,12 +229,17 @@ Current non-goals:
 - Robinhood Chain testnet deployment
 - real approve + settlement tx path
 
-### Next
+### In Progress
 
 - operator execution service
-- merchant proof verifier
+- merchant proof verifier middleware
+
+### Next
+
 - dispute and bond architecture
-- richer registry read surfaces
+- operator deactivation flows
+- permissionless desk entry
+- account abstraction upgrades
 
 ## Links
 
