@@ -3,7 +3,7 @@
   "network": "robinhoodTestnet",
   "rpcUrl": "https://rpc.testnet.chain.robinhood.com",
   "explorerUrl": "https://explorer.testnet.chain.robinhood.com",
-  "settlementRouter": "0x517ADeD3F84AA9D1b7BC8f86E44C0935AcCeDCa9",
+  "settlementRouter": "0x0C7d5C105Efd844c80faa1535c22fa67B5B89a57",
   "operatorRegistry": "0x1DC926A14Bb2337B610483E639f9c7E3a5652899",
   "asset": "0xb783Db1d57D09De913e907400625560930671b66",
   "deployer": "0xE9b4c3DbE8EcEaBF19e003ED8AEf2E9F438BE669",
@@ -11,5 +11,19 @@
   "latestApproveTx": "0xa9b02941e90f5619c118d03c00f896432625e44bf50c6aaf88cbfa07adff2535",
   "latestSettlementTx": "0x57d3dc6bc6beff1cdea73f5b793786628f64e641e9c640dbf4c1d3f2293edfc0",
   "latestMerchant": "0xf1B111F58aE4065c4b275f3AACdf58499268101A",
-  "latestMerchantAmount": "5000000000000000000"
+  "latestMerchantAmount": "5000000000000000000",
+  "batchSettlementRouter": "0x0C7d5C105Efd844c80faa1535c22fa67B5B89a57",
+  "batchRouterDeployer": "0x4DA4bdFF6c35B9eEFD79F4504E5a19A88D49ecEF",
+  "batchRouterDeployedAt": "2026-07-09T10:12:01.162Z",
+  "latestBatchRouterDeployTx": "0xdd4853b360050fa20e0f349ccf5805144d9e155f39dc8fe6e8458fdd6a90c74d",
+  "latestBatchApproveTx": "0xa4e289a6fa00d70da09d6f3face5f3dd2000dd40e45f4e7fa82f1729d5b2ce5d",
+  "latestBatchSettlementTx": "0x8b3d1296b77da5138acbdf0eff3603c52d6e8b1e8e768d1820a1122c45a2dfdf",
+  "latestBatchCount": 3,
+  "latestBatchAmountEach": "250000000000000000",
+  "latestBatchTotalAmount": "750000000000000000",
+  "latestBatchInvoiceHashes": [
+    "0x7ff0c9c4340fd40b9316087f174ef171707760509b74c3084099aabff28658e6",
+    "0xe72142deb569ff26eb364f0b01f44fa60a9b73496f5ece5866d7b461e73b5c34",
+    "0xbefad94a1d7ccc8d60f55595d3c441897781965139bae46cef3dd0d1b1a413ff"
+  ]
 }

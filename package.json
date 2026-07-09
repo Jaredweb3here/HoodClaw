@@ -9,8 +9,10 @@
     "clean": "hardhat clean",
     "test": "hardhat test",
     "deploy:hoodclaw:testnet": "hardhat run scripts/deploy-hoodclaw.js --network robinhoodTestnet",
+    "deploy:batch-router:testnet": "hardhat run scripts/deploy-batch-router.js --network robinhoodTestnet",
     "verify:hoodclaw:testnet": "hardhat run scripts/verify-info.js --network robinhoodTestnet",
     "test:settlement:testnet": "hardhat run scripts/test-live-settlement.js --network robinhoodTestnet",
+    "test:batch-settlement:testnet": "hardhat run scripts/test-live-batch-settlement.js --network robinhoodTestnet",
     "size": "hardhat size-contracts",
     "lint": "solhint 'contracts/**/*.sol'"
   },

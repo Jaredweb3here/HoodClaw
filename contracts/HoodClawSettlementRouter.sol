@@ -18,6 +18,16 @@ contract HoodClawSettlementRouter {
         string resource;
     }
 
+    struct SettlementRequest {
+        string invoiceId;
+        string resource;
+        address merchant;
+        address payer;
+        address operator;
+        address asset;
+        uint256 amount;
+    }
+
     address public owner;
     bool public paused;
     mapping(bytes32 => Settlement) public settlements;
@@ -34,6 +44,8 @@ contract HoodClawSettlementRouter {
         uint256 amount,
         uint256 timestamp
     );
+
+    event SettlementBatchRecorded(uint256 count, bytes32[] invoiceHashes);
 
     event Paused(address by);
     event Unpaused(address by);
@@ -91,6 +103,40 @@ contract HoodClawSettlementRouter {
         address asset,
         uint256 amount
     ) external whenNotPaused returns (bytes32 invoiceHash) {
+        return _recordSettlement(invoiceId, resource, merchant, payer, operator, asset, amount);
+    }
+
+    function recordSettlementBatch(
+        SettlementRequest[] calldata requests
+    ) external whenNotPaused returns (bytes32[] memory invoiceHashes) {
+        require(requests.length > 0, "empty batch");
+
+        invoiceHashes = new bytes32[](requests.length);
+        for (uint256 i = 0; i < requests.length; i++) {
+            SettlementRequest calldata request = requests[i];
+            invoiceHashes[i] = _recordSettlement(
+                request.invoiceId,
+                request.resource,
+                request.merchant,
+                request.payer,
+                request.operator,
+                request.asset,
+                request.amount
+            );
+        }
+
+        emit SettlementBatchRecorded(requests.length, invoiceHashes);
+    }
+
+    function _recordSettlement(
+        string calldata invoiceId,
+        string calldata resource,
+        address merchant,
+        address payer,
+        address operator,
+        address asset,
+        uint256 amount
+    ) internal returns (bytes32 invoiceHash) {
         require(merchant != address(0), "merchant required");
         require(operator != address(0), "operator required");
         require(asset != address(0), "asset required");

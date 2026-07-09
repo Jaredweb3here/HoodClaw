@@ -87,7 +87,7 @@ Robinhood Chain testnet:
 Current deployed contracts:
 
 - `MockUSDG`: `0xb783Db1d57D09De913e907400625560930671b66`
-- `HoodClawSettlementRouter`: `0x517ADeD3F84AA9D1b7BC8f86E44C0935AcCeDCa9`
+- `HoodClawSettlementRouter`: `0x0C7d5C105Efd844c80faa1535c22fa67B5B89a57`
 - `HoodClawOperatorRegistry`: `0x1DC926A14Bb2337B610483E639f9c7E3a5652899`
 
 Deployment record:
@@ -115,6 +115,30 @@ Explorer links:
   - `https://explorer.testnet.chain.robinhood.com/tx/0x57d3dc6bc6beff1cdea73f5b793786628f64e641e9c640dbf4c1d3f2293edfc0`
 - merchant wallet:
   - `https://explorer.testnet.chain.robinhood.com/address/0xf1B111F58aE4065c4b275f3AACdf58499268101A`
+
+## Verified Batch Flow
+
+Real batch transactions executed through `recordSettlementBatch(...)`:
+
+- batch router deploy tx:
+  - `0xdd4853b360050fa20e0f349ccf5805144d9e155f39dc8fe6e8458fdd6a90c74d`
+- batch approve tx:
+  - `0xa4e289a6fa00d70da09d6f3face5f3dd2000dd40e45f4e7fa82f1729d5b2ce5d`
+- batch settlement tx:
+  - `0x8b3d1296b77da5138acbdf0eff3603c52d6e8b1e8e768d1820a1122c45a2dfdf`
+- batch count:
+  - `3`
+- amount per settlement:
+  - `250000000000000000` = `0.25 MockUSDG`
+
+Explorer links:
+
+- batch router deploy:
+  - `https://explorer.testnet.chain.robinhood.com/tx/0xdd4853b360050fa20e0f349ccf5805144d9e155f39dc8fe6e8458fdd6a90c74d`
+- batch approve:
+  - `https://explorer.testnet.chain.robinhood.com/tx/0xa4e289a6fa00d70da09d6f3face5f3dd2000dd40e45f4e7fa82f1729d5b2ce5d`
+- batch settlement:
+  - `https://explorer.testnet.chain.robinhood.com/tx/0x8b3d1296b77da5138acbdf0eff3603c52d6e8b1e8e768d1820a1122c45a2dfdf`
 
 ## Repository Layout
 
