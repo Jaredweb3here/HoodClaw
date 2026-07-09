@@ -47,6 +47,47 @@ describe("HoodClawSettlementRouter batching", function () {
     }
   });
 
+  it("returns batch settlement status and details", async function () {
+    const { owner, merchant, operator, token, router } = await deployFixture();
+    const amount = ethers.parseUnits("1", 18);
+    const requests = [0, 1].map((index) => ({
+      invoiceId: `verify-batch-${index}`,
+      resource: "demo:batch-verifier",
+      merchant: merchant.address,
+      payer: owner.address,
+      operator: operator.address,
+      asset: token.target,
+      amount,
+    }));
+
+    await token.approve(router.target, amount * BigInt(requests.length));
+    await router.recordSettlementBatch(requests);
+
+    const invoiceHashes = [];
+    for (const request of requests) {
+      invoiceHashes.push(await router.computeInvoiceHash(
+        request.invoiceId,
+        request.resource,
+        request.merchant,
+        request.payer,
+        request.operator,
+        request.asset,
+        request.amount
+      ));
+    }
+
+    const statuses = await router.areSettledBatch([
+      ...invoiceHashes,
+      ethers.ZeroHash,
+    ]);
+    expect(statuses).to.deep.equal([true, true, false]);
+
+    const settlements = await router.getSettlementsBatch(invoiceHashes);
+    expect(settlements).to.have.lengthOf(2);
+    expect(settlements[0].invoiceHash).to.equal(invoiceHashes[0]);
+    expect(settlements[1].invoiceHash).to.equal(invoiceHashes[1]);
+  });
+
   it("reverts an empty batch", async function () {
     const { router } = await deployFixture();
     await expect(router.recordSettlementBatch([])).to.be.revertedWith("empty batch");

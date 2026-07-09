@@ -87,7 +87,7 @@ Robinhood Chain testnet:
 Current deployed contracts:
 
 - `MockUSDG`: `0xb783Db1d57D09De913e907400625560930671b66`
-- `HoodClawSettlementRouter`: `0x0C7d5C105Efd844c80faa1535c22fa67B5B89a57`
+- `HoodClawSettlementRouter`: `0xb2d87494bEf7244b592D71cC0C35d798c2C01FbE`
 - `HoodClawOperatorRegistry`: `0x1DC926A14Bb2337B610483E639f9c7E3a5652899`
 
 Deployment record:
@@ -121,24 +121,27 @@ Explorer links:
 Real batch transactions executed through `recordSettlementBatch(...)`:
 
 - batch router deploy tx:
-  - `0xdd4853b360050fa20e0f349ccf5805144d9e155f39dc8fe6e8458fdd6a90c74d`
+  - `0xc6936527870ddaa71b12928b9fcd264357749a97cc8c49b67e49424d9ce3b24e`
 - batch approve tx:
-  - `0xa4e289a6fa00d70da09d6f3face5f3dd2000dd40e45f4e7fa82f1729d5b2ce5d`
+  - `0x115da2c87a19a8254a163d7497761fc1f851871ff816e5fa68116104a9d89669`
 - batch settlement tx:
-  - `0x8b3d1296b77da5138acbdf0eff3603c52d6e8b1e8e768d1820a1122c45a2dfdf`
+  - `0x771100e893c6461aec63d02b5d741cac874c07a4af92b63af63ed358d0b502f9`
 - batch count:
   - `3`
 - amount per settlement:
   - `250000000000000000` = `0.25 MockUSDG`
+- batch read verification:
+  - `areSettledBatch([three settled hashes, zero hash])` returned `[true, true, true, false]`
+  - `getSettlementsBatch(...)` returned `3` settlement records
 
 Explorer links:
 
 - batch router deploy:
-  - `https://explorer.testnet.chain.robinhood.com/tx/0xdd4853b360050fa20e0f349ccf5805144d9e155f39dc8fe6e8458fdd6a90c74d`
+  - `https://explorer.testnet.chain.robinhood.com/tx/0xc6936527870ddaa71b12928b9fcd264357749a97cc8c49b67e49424d9ce3b24e`
 - batch approve:
-  - `https://explorer.testnet.chain.robinhood.com/tx/0xa4e289a6fa00d70da09d6f3face5f3dd2000dd40e45f4e7fa82f1729d5b2ce5d`
+  - `https://explorer.testnet.chain.robinhood.com/tx/0x115da2c87a19a8254a163d7497761fc1f851871ff816e5fa68116104a9d89669`
 - batch settlement:
-  - `https://explorer.testnet.chain.robinhood.com/tx/0x8b3d1296b77da5138acbdf0eff3603c52d6e8b1e8e768d1820a1122c45a2dfdf`
+  - `https://explorer.testnet.chain.robinhood.com/tx/0x771100e893c6461aec63d02b5d741cac874c07a4af92b63af63ed358d0b502f9`
 
 ## Repository Layout
 

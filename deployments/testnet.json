@@ -3,7 +3,7 @@
   "network": "robinhoodTestnet",
   "rpcUrl": "https://rpc.testnet.chain.robinhood.com",
   "explorerUrl": "https://explorer.testnet.chain.robinhood.com",
-  "settlementRouter": "0x0C7d5C105Efd844c80faa1535c22fa67B5B89a57",
+  "settlementRouter": "0xb2d87494bEf7244b592D71cC0C35d798c2C01FbE",
   "operatorRegistry": "0x1DC926A14Bb2337B610483E639f9c7E3a5652899",
   "asset": "0xb783Db1d57D09De913e907400625560930671b66",
   "deployer": "0xE9b4c3DbE8EcEaBF19e003ED8AEf2E9F438BE669",
@@ -12,18 +12,24 @@
   "latestSettlementTx": "0x57d3dc6bc6beff1cdea73f5b793786628f64e641e9c640dbf4c1d3f2293edfc0",
   "latestMerchant": "0xf1B111F58aE4065c4b275f3AACdf58499268101A",
   "latestMerchantAmount": "5000000000000000000",
-  "batchSettlementRouter": "0x0C7d5C105Efd844c80faa1535c22fa67B5B89a57",
+  "batchSettlementRouter": "0xb2d87494bEf7244b592D71cC0C35d798c2C01FbE",
   "batchRouterDeployer": "0x4DA4bdFF6c35B9eEFD79F4504E5a19A88D49ecEF",
-  "batchRouterDeployedAt": "2026-07-09T10:12:01.162Z",
-  "latestBatchRouterDeployTx": "0xdd4853b360050fa20e0f349ccf5805144d9e155f39dc8fe6e8458fdd6a90c74d",
-  "latestBatchApproveTx": "0xa4e289a6fa00d70da09d6f3face5f3dd2000dd40e45f4e7fa82f1729d5b2ce5d",
-  "latestBatchSettlementTx": "0x8b3d1296b77da5138acbdf0eff3603c52d6e8b1e8e768d1820a1122c45a2dfdf",
+  "batchRouterDeployedAt": "2026-07-09T10:20:17.067Z",
+  "latestBatchRouterDeployTx": "0xc6936527870ddaa71b12928b9fcd264357749a97cc8c49b67e49424d9ce3b24e",
+  "latestBatchApproveTx": "0x115da2c87a19a8254a163d7497761fc1f851871ff816e5fa68116104a9d89669",
+  "latestBatchSettlementTx": "0x771100e893c6461aec63d02b5d741cac874c07a4af92b63af63ed358d0b502f9",
   "latestBatchCount": 3,
   "latestBatchAmountEach": "250000000000000000",
   "latestBatchTotalAmount": "750000000000000000",
+  "latestBatchReadStatuses": [
+    true,
+    true,
+    true,
+    false
+  ],
   "latestBatchInvoiceHashes": [
-    "0x7ff0c9c4340fd40b9316087f174ef171707760509b74c3084099aabff28658e6",
-    "0xe72142deb569ff26eb364f0b01f44fa60a9b73496f5ece5866d7b461e73b5c34",
-    "0xbefad94a1d7ccc8d60f55595d3c441897781965139bae46cef3dd0d1b1a413ff"
+    "0x3acc12537a001b6cb28a18e40146b441c43291bd37a7184370ec0f5e346a2f5f",
+    "0x4600c8aa490b76be15bea6b748e296bc5d52ed9ed18e74a997be41ca0c1538cb",
+    "0xfe7672322d82cfa69c8d28f05b631e7042fa59b5884e16e1def129db94a9e758"
   ]
 }

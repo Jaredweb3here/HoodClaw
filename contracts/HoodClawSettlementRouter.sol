@@ -80,6 +80,26 @@ contract HoodClawSettlementRouter {
         return settlements[invoiceHash];
     }
 
+    function getSettlementsBatch(
+        bytes32[] calldata invoiceHashes
+    ) external view returns (Settlement[] memory batch) {
+        batch = new Settlement[](invoiceHashes.length);
+        for (uint256 i = 0; i < invoiceHashes.length; i++) {
+            bytes32 invoiceHash = invoiceHashes[i];
+            require(isSettled[invoiceHash], "not found");
+            batch[i] = settlements[invoiceHash];
+        }
+    }
+
+    function areSettledBatch(
+        bytes32[] calldata invoiceHashes
+    ) external view returns (bool[] memory statuses) {
+        statuses = new bool[](invoiceHashes.length);
+        for (uint256 i = 0; i < invoiceHashes.length; i++) {
+            statuses[i] = isSettled[invoiceHashes[i]];
+        }
+    }
+
     function computeInvoiceHash(
         string memory invoiceId,
         string memory resource,
