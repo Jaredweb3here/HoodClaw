@@ -1,0 +1,10 @@
+{
+  "chainId": 46630,
+  "rpcUrl": "https://rpc.testnet.chain.robinhood.com",
+  "explorerUrl": "https://explorer.testnet.chain.robinhood.com",
+  "settlementRouter": "0x376648DEda861038860ec251892bf62DF66B21CA",
+  "operatorRegistry": "0xd9f3BFd706d71EdC0182DE569fD6710329f5cE64",
+  "asset": "0x9a361B312Fc10a594E683DDF1438B3868e60fa1C",
+  "deployedAt": "2026-07-10T08:57:41.005Z",
+  "deployer": "0xD10647C402A0497c5C266Fbc8627700829D74859"
+}

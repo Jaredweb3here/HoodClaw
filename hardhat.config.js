@@ -5,6 +5,9 @@ const PRIVATE_KEY = process.env.PRIVATE_KEY || "";
 const RH_TESTNET_RPC_URL =
   process.env.RH_TESTNET_RPC_URL || "https://rpc.testnet.chain.robinhood.com";
 
+const RH_MAINNET_RPC_URL =
+  process.env.RH_MAINNET_RPC_URL || "https://rpc.mainnet.chain.robinhood.com";
+
 module.exports = {
   solidity: {
     version: "0.8.24",
@@ -19,6 +22,11 @@ module.exports = {
     robinhoodTestnet: {
       url: RH_TESTNET_RPC_URL,
       chainId: 46630,
+      accounts: PRIVATE_KEY ? [PRIVATE_KEY] : [],
+    },
+    robinhoodMainnet: {
+      url: RH_MAINNET_RPC_URL,
+      chainId: 4663,
       accounts: PRIVATE_KEY ? [PRIVATE_KEY] : [],
     },
   },

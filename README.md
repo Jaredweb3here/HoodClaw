@@ -76,6 +76,26 @@ Purpose:
 - ERC-20 style approve + transfer + transferFrom path
 - used because the canonical docs address did not expose a testnet token contract at the time of deployment
 
+## Live Mainnet Deployment
+
+Robinhood Chain mainnet:
+
+- Chain ID: `4663`
+- RPC: `https://rpc.mainnet.chain.robinhood.com`
+- Explorer: `https://robinhoodchain.blockscout.com`
+
+Current deployed contracts:
+
+- `MockUSDG`: `0x9a361B312Fc10a594E683DDF1438B3868e60fa1C`
+- `HoodClawSettlementRouter`: `0x376648DEda861038860ec251892bf62DF66B21CA`
+- `HoodClawOperatorRegistry`: `0xd9f3BFd706d71EdC0182DE569fD6710329f5cE64`
+
+Explorer links:
+
+- https://robinhoodchain.blockscout.com/address/0x9a361B312Fc10a594E683DDF1438B3868e60fa1C
+- https://robinhoodchain.blockscout.com/address/0x376648DEda861038860ec251892bf62DF66B21CA
+- https://robinhoodchain.blockscout.com/address/0xd9f3BFd706d71EdC0182DE569fD6710329f5cE64
+
 ## Live Testnet Deployment
 
 Robinhood Chain testnet:
